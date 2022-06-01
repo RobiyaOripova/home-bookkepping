@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ .my-container {
+     background: #1b1e24;
+    padding:2rem;
+    margin-top: 2rem;
+    height: auto;
+    width: 60% !important;
+}
+  .create-table{
+     padding-top:2rem;
+     font-size:1.7rem;
+      text-align: center;
+
+
+ }
+.create-table a{
+    text-decoration: none;
+    color: #1b1e24;
+}
+.container h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    color: #fff;
+    padding-top: 1rem;
+}
+.container select, .container input {
+    margin: 1.7rem 0;
+    border: 0;
+    padding: 0.7rem;
+}
+.container button {
+    margin: 1rem 0;
+    background: #fff;
+    color: #4b6cb7;
+    font-weight: 600;
+    border: 0;
+}
+
+/*Table*/
+
+table{
+    margin-top:2rem;
+}
+table tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+    color: #666B85;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+table tr:hover td {
+    background: #4E5066;
+    color: #FFFFFF;
+    border-top: 1px solid #22262e;
+}
+table tr:first-child {
+    border-top: none;
+}
+
+table tr:nth-child(odd) td {
+    background: #EBEBEB;
+}
+table tr:nth-child(odd):hover td {
+    background: #4E5066;
+}
+
+table thead{
+    background: #1b1e24;
+}
+table thead th {
+    color: #D5DDE5;
+    border-right: 1px solid #343a45;
+    font-size: 23px;
+    font-weight: 100;
+    padding: 24px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+table tbody td {
+    background: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+
+}
+table tbody .comment{
+    width:70%;
+}
+table tbody td:last-child {
+    border-right: 0;
+}
