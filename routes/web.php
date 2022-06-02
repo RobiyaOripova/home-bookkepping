@@ -27,7 +27,8 @@ Route::post("create",[UserAuthController::class,"create"])->name("auth.create");
 Route::post("check",[UserAuthController::class,"authenticate"])->name("auth.check");
 Route::get("logout",[UserAuthController::class,"logout"]);
 //Accounting
-Route::get("accountings",[AccountingController::class,"index"])->name("table-show");
+Route::get("accountings",[AccountingController::class,"index"])->name('table-show');
+Route::get("accountings/list",[AccountingController::class,"anydata"])->name('datatables.data');
 Route::get("accountings/create",[AccountingController::class,"create"])->name("table-create");
 Route::post("accountings",[AccountingController::class,"store"])->name("table-store");
 Route::get("accountings/{accounting}/edit",[AccountingController::class,"edit"])->name("table-edit");

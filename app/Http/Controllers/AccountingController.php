@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\Accounting;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\AccountingRequest;
-
+use Yajra\Datatables\Datatables;
 use App\Services\AccountingService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function PHPUnit\Framework\returnArgument;
 
 class AccountingController extends Controller
 {
@@ -18,12 +20,28 @@ class AccountingController extends Controller
      */
     public function index()
     {
-        $id=auth()->user()->id;
-        $first=new AccountingService();
-        $data=$first->accountIndex($id);
-        return $data;
+
+        return view("auth.create");
 
     }
+
+    public function anydata(Request $request)
+    {
+       $id=auth()->user()->id;
+
+        if ($request->ajax()) {
+            $data=Accounting::where("user_id",$id)->get();
+            return Datatables::of($data)
+              /*  ->addColumn('action', function ($data) {
+                    return '<a href="{{route("table-edit",[$data->id])}}" class="btn"><i class="fas fa-edit"></i></a>';
+                })
+                ->rawColumns(['action'])*/
+                ->make(true);
+
+
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
