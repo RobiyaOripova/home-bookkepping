@@ -32,10 +32,19 @@ class AccountingController extends Controller
         if ($request->ajax()) {
             $data=Accounting::where("user_id",$id)->get();
             return Datatables::of($data)
-              /*  ->addColumn('action', function ($data) {
-                    return '<a href="{{route("table-edit",[$data->id])}}" class="btn"><i class="fas fa-edit"></i></a>';
-                })
-                ->rawColumns(['action'])*/
+
+                    ->addColumn('action', function ($row) {
+                        $edit_t=route('table-edit',$row->id);
+                        $destroy_t=route('table-delete',$row->id);
+                        $update="<a href='{$edit_t}' class='m-1 col edit btn btn-success btn-sm'>Edit</a>";
+                        $delete="<a href='{$destroy_t}' class='m-1 col edit btn btn-danger btn-sm'>Delete</a>";
+                        return "<div class='row'>
+                        {$update}
+                        {$delete}
+                        </div>";
+                    })
+
+                ->rawColumns(['action'])
                 ->make(true);
 
 

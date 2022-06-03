@@ -41,6 +41,7 @@
             <th>Categories</th>
             <th>Money</th>
             <th>Comment</th>
+            <th>Action</th>
           <!--  <th scope="col">Update</th>
             <th scope="col">Delete</th>-->
         </tr>
@@ -73,7 +74,7 @@
                 {data: 'categories',name:'categories'},
                 {data: 'money',name:'money'},
                 {data: 'comment',name:'comment'},
-               /* {data: 'action', name: 'action', orderable: false, searchable: false}*/
+                {data: 'action', name: 'action', orderable: false, searchable: false}
 
 
 

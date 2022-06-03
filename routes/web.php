@@ -33,7 +33,7 @@ Route::get("accountings/create",[AccountingController::class,"create"])->name("t
 Route::post("accountings",[AccountingController::class,"store"])->name("table-store");
 Route::get("accountings/{accounting}/edit",[AccountingController::class,"edit"])->name("table-edit");
 Route::put("accountings/{accounting}",[AccountingController::class,"update"])->name("table-update");
-Route::delete("accountings/{accounting}",[AccountingController::class,"destroy"])->name("table-delete");
+Route::get("accountings/{accounting}",[AccountingController::class,"destroy"])->name("table-delete");
 
 
 Route::group(['prefix' => 'admin'], function () {
