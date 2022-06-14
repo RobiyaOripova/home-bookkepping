@@ -28,6 +28,7 @@ class AccountingController extends Controller
     public function anydata(Request $request)
     {
        $id=auth()->user()->id;
+       $example="example";
 
         if ($request->ajax()) {
             $data=Accounting::where("user_id",$id)->get();
